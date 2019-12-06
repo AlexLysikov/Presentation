@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/moon.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>What is REST API?</h1>
+					<h6>or how nice to chat with the server</h6>
+				</section>
+				<section>
+					<h2>REST definition</h2>
+					<div style="display: flex; justify-content: space-between; align-items: center;">
+						<p>REST - is an abbreviation that stands for “Representational State Transfer”.
+							It represents the architectural style of interaction between components of 
+							a distributed application on the network. </p>
+						<img src="./src/Roy_Fielding.jpg" style="margin-left: 50px;" width="400" height="300" alt="Roy Fielding">
+					</div>
+				</section>
+				<section>
+					<h2>REST properties</h2>
+					<img src="./src/RestfuArchitecture.jpg" alt="restful architecture">
+					<p>When a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource.</p>
+				</section>
+				<section>
+					<h2>REST basic components</h2>
+					<div style="display: grid; grid-template-columns: 1fr 2fr;">
+						<img src="./src/rest components.jpeg" width="400" height="250" alt="rest components">
+						<ul>
+							<h6>2 things that you need to provide to the server:</h6>
+							<li>An identifier for the resource you are interested in.</li>
+							<li>The operation you want the server to perform on that resource, in the form of an HTTP method (GET, POST, PUT, and DELETE).</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<section>
+						<h2>REST constraints</h2>
+						<img src="./src/rest-properties (1).jpg" height="300" alt="rest properties">
+					</section>
+					<section>
+						<h2>REST constraints</h2>
+						<h3>CLIENT-SERVER</h3>
+						<img src="./src/rest-client-server.jpg" height="300" alt="rest CLIENT-SERVER">
+					</section>
+					<section>
+						<h2>REST constraints</h2>
+						<h3>STATELESS</h3>
+						<img src="./src/rest-stateless.jpg" height="300" alt="rest STATELESS">
+					</section>
+					<section>
+						<h2>REST constraints</h2>
+						<h3>CACHEABLE</h3>
+						<img src="./src/rest-cache.jpg" height="300" alt="rest CACHEABLE">
+					</section>
+					<section>
+						<h2>REST constraints</h2>
+						<h3>UNIFORM INTERFACE</h3>
+						<img src="./src/rest-cache.jpg" height="300" alt="rest UNIFORM INTERFACE">
+					</section>
+					<section>
+						<h2>REST constraints</h2>
+						<h3>LAYERED SYSTEM</h3>
+						<img src="./src/rest-layered.jpg" height="300" alt="rest LAYERED SYSTEM">
+					</section>
+					<section>
+						<h2>REST constraints</h2>
+						<h3>CODE-ON-DEMAND</h3>
+						<img src="./src/code on demand.png" height="300" alt="rest CODE-ON-DEMAND">
+					</section>
+				</section>
+				<section>
+					<h2>Client in REST</h2>
+					<img src="./src/client.png" alt="rest client">
+					<p>Client in REST — is the person or software<br>who uses the API.</p>
+				</section>
+				<section>
+					<h2>Resourse in REST</h2>
+					<img src="./src/resourse.jpg" height="300" alt="rest resourse">
+					<p>The key abstraction of information in REST<br>is a resource.</p>
+				</section>
+				<section>
+					<h2>Representation in REST</h2>
+					<img src="./src/representation.png" height="300" alt="rest representation">
+					<p>The state of resource at any particular timestamp<br>is known as resource representation.</p>
+				</section>
+				<section><h3>REST and HTTP are not same!</h3></section>
+				<section>
+					<h2>Linked response</h2>
+					<img src="./src/matrix.jpg" alt="response links">
+					<p>The REST architectural style, data and functionality are considered resources<br>
+						and are accessed using Uniform Resource Identifiers (URIs).</p>
+				</section>
+				<section>
+					<section>
+						<h2>HATEOAS</h2>
+						<img src="./src/HATEOAS.jpg" alt="HATEOAS">
+						<p>The REST architectural style, data and functionality are considered resources<br>
+							and are accessed using Uniform Resource Identifiers (URIs).</p>
+					</section>
+					<section>
+						<h2>HATEOAS</h2>
+						<pre><code class="hljs" data-line-numbers="7,9-11">
+{
+	"departmentId": 10,
+	"departmentName": "Administration",
+	"locationId": 1700,
+	"managerId": 200,
+	"links": [
+		{
+			"href": "10/employees",
+			"rel": "employees",
+			"type" : "GET"
+		}
+	]
+}
+						</code></pre>
+						<p>The response returned by the server contains hypermedia 
+							links to employee resources, which can be traversed by the client.</p>
+					</section>
+				</section>
+				<section>
+					<h2>SOURCES USED:</h2>
+					<ul>
+						<li><a href="https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f">What is REST — A Simple Explanation for Beginners</a></li>
+						<li><a href="https://restfulapi.net">RESTful API tutorial</a></li>
+						<li><a href="https://www.guru99.com/restful-web-services.html">RESTful Web Services Tutorial with Example</a></li>
+						<li><a href="https://openclassrooms.com/en/courses/3432056-build-your-web-projects-with-rest-apis/3496011-identify-examples-of-rest-apis">Identify examples of REST APIs</a></li>
+						<li><a href="http://student.webcamp.com.ua/rest_student/rest101">Basic concepts of a RESTful application</a></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Good luck and all the best!</h2>
+					<h3>Buy!</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
